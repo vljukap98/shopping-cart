@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: shopping-cart
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: local

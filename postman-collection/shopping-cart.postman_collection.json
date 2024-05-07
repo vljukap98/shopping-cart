@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "471e5551-74df-4159-8f7c-5c4feafafb11",
+		"name": "shopping-cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14590658"
+	},
+	"item": [
+		{
+			"name": "Create cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/58202ba0-b6b6-4904-946b-594d4fea2089",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"58202ba0-b6b6-4904-946b-594d4fea2089"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add item with recurring price",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offerIdentification\":\"bf9aa356-db64-40d0-aa38-d96eaa4ebaf8\",\r\n    \"price\":{\r\n        \"value\": 2.3,\r\n        \"recurrence\": {\r\n            \"duration\":12,\r\n            \"durationType\":\"DAILY\"\r\n        },\r\n        \"type\":\"RECURRING\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/58202ba0-b6b6-4904-946b-594d4fea2089/add-item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"58202ba0-b6b6-4904-946b-594d4fea2089",
+						"add-item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify item to recurring price",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offerIdentification\":\"bf9aa356-db64-40d0-aa38-d96eaa4ebaf8\",\r\n    \"price\":{\r\n        \"value\": 5.3,\r\n        \"recurrence\": {\r\n            \"duration\":12,\r\n            \"durationType\":\"DAILY\"\r\n        },\r\n        \"type\":\"RECURRING\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/update-item/663916ff857c9e0578539f87",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"update-item",
+						"663916ff857c9e0578539f87"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add item with one time price",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offerIdentification\":\"bf9aa356-db64-40d0-aa38-d96eaa4ebaf8\",\r\n    \"price\":{\r\n        \"value\": 2.3,\r\n        \"recurrence\": {},\r\n        \"type\":\"ONE_TIME\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/58202ba0-b6b6-4904-946b-594d4fea2089/add-item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"58202ba0-b6b6-4904-946b-594d4fea2089",
+						"add-item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update item to one time price",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offerIdentification\":\"bf9aa356-db64-40d0-aa38-d96eaa4ebaf8\",\r\n    \"price\":{\r\n        \"value\": 2.3,\r\n        \"recurrence\": {},\r\n        \"type\":\"ONE_TIME\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/update-item/6638f06bdbe95624995ae44b",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"update-item",
+						"6638f06bdbe95624995ae44b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user shopping  cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/58202ba0-b6b6-4904-946b-594d4fea2089",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"58202ba0-b6b6-4904-946b-594d4fea2089"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get sold data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offerIdentification\":\"bf9aa356-db64-40d0-aa38-d96eaa4ebaf8\",\r\n    \"action\":\"ADD\",\r\n    \"startDate\":\"2024-05-05\",\r\n    \"endDate\":\"2024-05-10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/stats/get-sold-offers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"stats",
+						"get-sold-offers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove item from cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/6638fd6724701d57045384d0/remove-item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"6638fd6724701d57045384d0",
+						"remove-item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete item from cart (unsubscribe)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/6638f06bdbe95624995ae44b/delete-item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"6638f06bdbe95624995ae44b",
+						"delete-item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Evict cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/58202ba0-b6b6-4904-946b-594d4fea2089/evict-cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"58202ba0-b6b6-4904-946b-594d4fea2089",
+						"evict-cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay cart",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/shopping-cart/58202ba0-b6b6-4904-946b-594d4fea2089/pay-shopping-cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"shopping-cart",
+						"58202ba0-b6b6-4904-946b-594d4fea2089",
+						"pay-shopping-cart"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
